@@ -15,13 +15,13 @@ const CleanedPage = () => {
     setDownloadUrl(null);
 
     try {
-      const response = await fetch('http://localhost:8080/clean-data', {
+      const response = await fetch('https://snapeda-server.onrender.com/clean-data', {
         method: 'POST',
       });
 
       if (!response.ok) throw new Error('Data cleaning failed');
 
-      const downloadResponse = await fetch('http://localhost:8080/download');
+      const downloadResponse = await fetch('https://snapeda-server.onrender.com/download');
       if (!downloadResponse.ok) throw new Error('Download failed after cleaning');
 
       const blob = await downloadResponse.blob();

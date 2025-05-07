@@ -84,7 +84,7 @@ export default function Home() {
     formData.append('file', file);
   
     try {
-      const res = await fetch('http://localhost:8080/upload', { method: 'POST', body: formData });
+      const res = await fetch('https://snapeda-server.onrender.com/upload', { method: 'POST', body: formData });
 
       let data = null;
       const text = await res.text();
@@ -549,6 +549,16 @@ export default function Home() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-5xl mx-auto">
+        <div className="flex items-center justify-center mb-4">
+          <Image
+            src="/logo.png"
+            alt="Rotating"
+            width={128}
+            height={128}
+            className="animate-spin-slow"
+          />  
+        </div>
+
         <h1 className="text-4xl font-extrabold text-blue-500 text-center mb-6">
           Snap<span className='text-green-500'>EDA</span>
         </h1>
