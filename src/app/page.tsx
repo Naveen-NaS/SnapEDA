@@ -84,7 +84,7 @@ export default function Home() {
     formData.append('file', file);
   
     try {
-      const res = await fetch('https://snapeda-server.onrender.com/upload', { method: 'POST', body: formData });
+      const res = await fetch('http://localhost:8080/upload', { method: 'POST', body: formData });
 
       let data = null;
       const text = await res.text();
